@@ -276,6 +276,9 @@
  * Applies DataTables library (js and css) to applicants table
  * - Allows filtering and sorting of tables
  */
-$(document).ready(function() {
-  $('#applicants-table').DataTable();
-} );
+let table = new DataTable('#applicants-table', {
+  language: {
+    zeroRecords: "Applicant does not exist",
+    infoFiltered: "(_MAX_ total entries)"
+  }
+});
