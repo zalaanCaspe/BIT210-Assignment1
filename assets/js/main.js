@@ -11,7 +11,7 @@
   }
   
   /**
-   * From a youtube tutorial for resusable event listeners
+   * Reusable event listeners
    * Used mainly on homepage to offset auto-scroll and activate burger menu on mobile
    * Parameters explained:
    *        type: the type of event that triggers the function (click, load etc)
@@ -177,10 +177,10 @@
   // /**
   //  * Skills animation
   //  */
-  // let skilsContent = select('.skills-content');
-  // if (skilsContent) {
+  // let skillsContent = select('.skills-content');
+  // if (skillsContent) {
   //   new Waypoint({
-  //     element: skilsContent,
+  //     element: skillsContent,
   //     offset: '80%',
   //     handler: function (direction) {
   //       let progress = select('.progress .progress-bar', true);
@@ -271,3 +271,11 @@
 //       }
 //     }
 //   });
+
+/**
+ * Applies DataTables library (js and css) to applicants table
+ * - Allows filtering and sorting of tables
+ */
+$(document).ready(function() {
+  $('#applicants-table').DataTable();
+} );

@@ -28,6 +28,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
+# Add button
+--------------------------------------------------------------*/
+.add-btn {
+  position: fixed;
+  right: 15px;
+  bottom: 65px;
+  z-index: 996;
+}
+
+.add-btn i {
+  font-size: 50px;
+  color: #3498db;
+  line-height: 0;
+  transition: all 0.4s;
+}
+
+.add-btn i:hover {
+  color: #57aae1;
+}
+
+/*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top {
@@ -1212,4 +1233,33 @@ section {
   background: #5faee3;
   color: #fff;
   text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Applicants page
+--------------------------------------------------------------*/
+
+.applicants {
+  padding: 0px 0px;;
+}
+
+.applicants table thead th:first-child, .applicants table tbody th {
+  text-align: center;
+}
+
+.applicants table a {
+  transition: all 0.2s;
+}
+
+.applicants table a:hover {
+  color: #34dba9;
+}
+
+.applicants .page-item.active .page-link {
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  color: #fff;
+}
+.applicants .page-link {
+  color: #3498db;
 }
