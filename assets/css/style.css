@@ -27,6 +27,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.search-id {
+  display: none;
+}
+
 /*--------------------------------------------------------------
 # Sortable Tables
 --------------------------------------------------------------*/
@@ -1273,10 +1277,6 @@ section {
   transition: all 0.3s;
 }
 
-.organization-id {
-  display: none;
-}
-
 /*--------------------------------------------------------------
 # Specific Organizations Pages
 --------------------------------------------------------------*/
@@ -1316,6 +1316,8 @@ section {
 .applicants {
   padding: 0px 0px;;
 }
+
+.applicants table::before
 
 .applicants table thead th:first-child, .applicants table tbody th {
   text-align: center;
