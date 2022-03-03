@@ -350,9 +350,12 @@ new Swiper('.testimonials-slider', {
  * Applies DataTables library (js and css) to applicants table
  * - Allows filtering and sorting of tables
  */
-let table = new DataTable('#applicants-table', {
-  language: {
-    zeroRecords: "Applicant does not exist",
-    infoFiltered: "(_MAX_ total entries)"
-  }
-});
+let applicants = select('#applicants-table');
+if (applicants) {
+  let table = new DataTable('#applicants-table', {
+    language: {
+      zeroRecords: "Applicant does not exist",
+      infoFiltered: "(_MAX_ total entries)"
+    }
+  });
+}
