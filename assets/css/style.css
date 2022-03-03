@@ -27,8 +27,16 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
 
+/* Meant to hide text (mainly IDs) from view 
+   but still allowing them to be searched */
 .search-id {
   display: none;
+}
+
+/* To create scroallbale responsive tables in case of overvlow */
+
+.large-table {
+  overflow: auto;
 }
 
 /*--------------------------------------------------------------
@@ -1316,8 +1324,6 @@ section {
 .applicants {
   padding: 0px 0px;;
 }
-
-.applicants table::before
 
 .applicants table thead th:first-child, .applicants table tbody th {
   text-align: center;
