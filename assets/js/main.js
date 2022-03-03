@@ -250,38 +250,38 @@ window.addEventListener('load', () => {
 function searchFilter() {
   var searchRegex; // To hold the value entered in the search field
 
-// create Isotope to 
-// filter portfolio-items in the portfolio-container
-// by matching search input with item labels
-var searchIsotope = new Isotope( '.portfolio-container', {
-  itemSelector: '.portfolio-item',
-  layoutMode: 'fitRows',
-  filter: function( portfolioItem ) {
-    return searchRegex ? portfolioItem.textContent.match( searchRegex ) : true;
-  },
-});
+  // create Isotope to 
+  // filter portfolio-items in the portfolio-container
+  // by matching search input with item labels
+  var searchIsotope = new Isotope('.portfolio-container', {
+    itemSelector: '.portfolio-item',
+    layoutMode: 'fitRows',
+    filter: function (portfolioItem) {
+      return searchRegex ? portfolioItem.textContent.match(searchRegex) : true;
+    },
+  });
 
-// get input field, add event listener to get input value on every keyup
-var searchInput = document.querySelector('.searchOrg');
-searchInput.addEventListener( 'keyup', debounce( function() {
-  searchRegex = new RegExp( searchInput.value, 'gi' );
-  searchIsotope.arrange();
-}, 200 ) );
+  // get input field, add event listener to get input value on every keyup
+  var searchInput = document.querySelector('.searchFilter');
+  searchInput.addEventListener('keyup', debounce(function () {
+    searchRegex = new RegExp(searchInput.value, 'gi');
+    searchIsotope.arrange();
+  }, 200));
 
-// debounce so filtering doesn't happen every millisecond
-function debounce( fn, threshold ) {
-  var timeout;
-  threshold = threshold || 100;
-  return function debounced() {
-    clearTimeout( timeout );
-    var args = arguments;
-    var _this = this;
-    function delayed() {
-      fn.apply( _this, args );
-    }
-    timeout = setTimeout( delayed, threshold );
-  };
-}
+  // debounce so filtering doesn't happen every millisecond
+  function debounce(fn, threshold) {
+    var timeout;
+    threshold = threshold || 100;
+    return function debounced() {
+      clearTimeout(timeout);
+      var args = arguments;
+      var _this = this;
+      function delayed() {
+        fn.apply(_this, args);
+      }
+      timeout = setTimeout(delayed, threshold);
+    };
+  }
 
 }
 
