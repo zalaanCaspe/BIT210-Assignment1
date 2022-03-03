@@ -347,15 +347,19 @@ new Swiper('.testimonials-slider', {
 });
 
 /**
- * Applies DataTables library (js and css) to applicants table
+ * Applies DataTables library (js and css) to tables with id sortable-table
  * - Allows filtering and sorting of tables
+ * - Uses custom attribute data-table-for to determine what the table is for
+ *      (used to display appropriate error)
  */
-let applicants = select('#applicants-table');
-if (applicants) {
-  let table = new DataTable('#applicants-table', {
+let sortableTable = select('#sortable-table');
+if (sortableTable) {
+  var zeroMessage = sortableTable.getAttribute('data-table-for') + " does not exist";
+  let table = new DataTable('#sortable-table', {
     language: {
-      zeroRecords: "Applicant does not exist",
+      zeroRecords: zeroMessage,
       infoFiltered: "(_MAX_ total entries)"
-    }
+    },
+    order: []
   });
 }

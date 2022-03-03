@@ -28,6 +28,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
+# Sortable Tables
+--------------------------------------------------------------*/
+
+.sortable-table table a {
+  transition: all 0.2s;
+}
+
+.sortable-table table a:hover {
+  color: #34dba9;
+}
+
+.sortable-table .page-item.active .page-link {
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  color: #fff;
+}
+.sortable-table .page-link {
+  color: #3498db;
+}
+
+/*--------------------------------------------------------------
 # Add button
 --------------------------------------------------------------*/
 .add-btn {
@@ -1257,6 +1278,38 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Specific Organizations Pages
+--------------------------------------------------------------*/
+
+.specific-organization {
+  padding: 10px 0;
+}
+.specific-organization h3 {
+  font-weight: 600;
+  font-size: 32px;
+}
+.specific-organization-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+.specific-organization-info ul li + li {
+  margin-top: 10px;
+}
+.specific-organization-info ul li {
+  position: relative;
+  padding-left: 26px;
+}
+.specific-organization-info ul i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  color: #3498db;
+}
+
+
+/*--------------------------------------------------------------
 # Applicants page
 --------------------------------------------------------------*/
 
@@ -1266,21 +1319,4 @@ section {
 
 .applicants table thead th:first-child, .applicants table tbody th {
   text-align: center;
-}
-
-.applicants table a {
-  transition: all 0.2s;
-}
-
-.applicants table a:hover {
-  color: #34dba9;
-}
-
-.applicants .page-item.active .page-link {
-  background-color: #3498db;
-  border: 1px solid #3498db;
-  color: #fff;
-}
-.applicants .page-link {
-  color: #3498db;
 }
