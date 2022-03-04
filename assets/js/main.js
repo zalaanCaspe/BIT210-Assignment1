@@ -363,3 +363,20 @@ if (sortableTable) {
     order: []
   });
 }
+
+let trigger = select('#waypoint');
+if (trigger) {
+  var waypoint = new Waypoint({
+    element: document.getElementById('waypoint'),
+    handler: function(direction) {
+      let btn = document.getElementsByClassName('add-btn')[0];
+      if (direction == 'down') {
+        btn.classList.add('active')
+      }
+      else {
+        btn.classList.remove('active')
+      }
+    },
+    offset: 500
+  })
+}
