@@ -117,7 +117,7 @@
         </div>
 
         <section class="row justify-content-center sortable-table">
-          <h2 class="text-center">Organization Representatives</h2>
+          <h2 class="text-center" id="waypoint">Organization Representatives</h2>
           <div class="col col-lg-8  list-of-reps">
             <table id="sortable-table" class="table" data-table-for="Representative">
               <thead class="table-primary">
@@ -139,10 +139,58 @@
       </div>
     </section>
 
-    <!-- Add rep -->
-    <a href="#" class="add-btn d-flex align-items-center justify-content-center">
+    <!-- Add Rep button -->
+    <a class="add-btn d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#modal-form-backdrop">
       <i class="bi bi-plus-circle-fill"></i>
+      <span>Rep</span>
     </a>
+
+    <!-- Floating (Modal) form -->
+    <div class="modal fade" id="modal-form-backdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Add Representative</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          
+          <form action="/action_page.php" method="POST" class="form col-11 mx-auto add-organization-form">
+            <div class="row">
+              <div class="col-lg-4 form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="org-id" readonly value="ORG009">
+                <label for="org-id">Organization ID</label>
+              </div>
+              <div class="col-lg-8 form-floating mb-3 mt-lg-3">
+                <input type="text" class="form-control" id="org-name" readonly value="Zoo Negara">
+                <label for="org-name">Organization Name</label>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="rep-username" placeholder="Username" required>
+              <label for="rep-username">Username</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="rep-fullname" placeholder="Full Name" pattern="[a-zA-Z_ ]*" title="Enter alphabets only" required>
+              <label for="rep-fullname">Full Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="tel" class="form-control" id="rep-mobile" placeholder="Mobile No." pattern="[0-9]*" required>
+              <label for="rep-mobile">Mobile No.</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="rep-job" placeholder="Job Title" required>
+              <label for="rep-job">Job Title</label>
+            </div>
+            <div class="modal-footer">
+              <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
 
   </main><!-- End #main -->
 
@@ -167,9 +215,9 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.html#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="../index.html#services">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
