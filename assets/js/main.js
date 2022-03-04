@@ -364,12 +364,21 @@ if (sortableTable) {
   });
 }
 
+/**
+ * To set visibility for "Add" buttons
+ * Triggered if element with id="waypoint" exists
+ * creates a Waypoint object which is an easy way to trigger specific functions
+ * First, the button is retrieved
+ * If the user scrolls down to the element
+ * The button is set to be visible (class="active")
+ * otherwise, it is made to be invisible
+ */
 let trigger = select('#waypoint');
 if (trigger) {
+  let btn = document.getElementsByClassName('add-btn')[0];
   var waypoint = new Waypoint({
     element: document.getElementById('waypoint'),
     handler: function(direction) {
-      let btn = document.getElementsByClassName('add-btn')[0];
       if (direction == 'down') {
         btn.classList.add('active')
       }
