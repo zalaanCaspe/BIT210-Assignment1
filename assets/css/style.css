@@ -1345,3 +1345,15 @@ section {
 .applicants table thead th:first-child, .applicants table tbody th {
   text-align: center;
 }
+
+/*-------------------------------------------------------------
+# Profile Page
+--------------------------------------------------------------*/
+
+.portfolio .profile-info ul li{
+  list-style-type: none;
+}
+
+.portfolio .profile-info ul li div:first-child {
+  text-align: right;
+}
