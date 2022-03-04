@@ -93,12 +93,18 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Appeal by Shelter Home</h2>
+          <h2><strong>Appeal by Shelter Home</strong></h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Appeal by Shelter Home</li>
           </ol>
         </div>
+
+        
+          
+          
+          
+        
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -128,6 +134,46 @@
               </div>
               <div class="swiper-pagination"></div>
             </div>
+
+            <section class="row justify-content-center sortable-table">
+              <h2 class="text-center">Contributions</h2>
+              <div class="col col-lg-8  list-of-contributions">
+                <table id="sortable-table" class="table" data-table-for="Contribution">
+                  <thead class="table-primary">
+                    <tr>
+                      <th scope="col" class="col-2">Type</th>
+                      <th scope="col" class="col-3">Description</th>
+                      <th scope="col" class="col-2">Quantity</th>
+                      <th scope="col" class="col-3">Estimated value (RM)</th>
+                      <th scope="col" class="col-3">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Goods</td>
+                      <td>Rice</td>
+                      <td>4</td>
+                      <td>20.00</td>
+                      <td>02/03/2022</td>
+                    </tr>
+                    <tr>
+                      <td>Goods</td>
+                      <td>Chicken</td>
+                      <td>2</td>
+                      <td>30.00</td>
+                      <td>01/03/2022</td>
+                    </tr>
+                    <tr>
+                      <td>Cash</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>100.00</td>
+                      <td>01/03/2022</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
           </div>
 
           <div class="col-lg-4">
@@ -141,6 +187,16 @@
                 <br>
                 <li><strong>Address</strong>: No. 9, 1st Floor, Jalan Barat, Pjs 8, 46200 Petaling Jaya, Selangor</li>
                 <li><strong>Website</strong>: <a href="https://www.shelterhome.org/" target="_blank">https://www.shelterhome.org/</a></li>
+                <br>
+                <li><form action="/action_page.php">
+                  <label for="outcome"><strong>Outcome:</strong></label>
+                  <select name="outcome" id="outcome">
+                    <option value="complete">Complete</option>
+                    <option value="incomplete">Incomplete</option>              
+                  </select>
+                  <br><br>
+                  <input type="submit" value="Confirm Outcome" style="background-color: green; color: white; border-radius: 5px; border-color: transparent;">
+                </form></li>
               </ul>
             </div>
             <div class="portfolio-description">
@@ -188,9 +244,9 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#services">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
