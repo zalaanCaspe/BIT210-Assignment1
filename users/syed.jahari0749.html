@@ -50,6 +50,7 @@
                     <li><a class="nav-link scrollto" href="../index.html#testimonials">Testimonials</a></li>
                     <li><a class="nav-link scrollto" href="../index.html#contact">Contact</a></li>
                     <li><a class="nav-link scrollto" href="../applicants.html">Applicants</a></li>
+                    <li><a class="nav-link scrollto" href="../login.html">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -153,7 +154,7 @@
                                                 <th scope="col">Description</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="docs-table-body">
                                             <tr>
                                                 <td><a href="documents/syed.jahari0749-001.pdf">syed-jahari-ic.pdf</a></td>
                                                 <td>Scanned IC PDF file</td>
@@ -168,6 +169,10 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <div class="add-docs">
+                                        <a onclick="clickAdd()">Add Documents</a>
+                                        <input type="file" id="add-docs" onchange="addDocs(this.value)">
+                                    </div>
                                 </div>
                             </div>
                             <div class="col col-lg-6 text-center">
