@@ -389,3 +389,65 @@ if (trigger) {
     offset: 500
   })
 }
+
+/**
+ * Activate when registration form is present
+ * retrieve ul element called docs-list. This is list of uploaded documents
+ * the function will receive the filepath of uploaded doc
+ * split the path and get the last element, the file name
+ * create an li element and add file name as text to it
+ * append the li element to the docs-list item
+ */
+let logRegForm = select('.log-reg-container');
+if (logRegForm) {
+  let login = document.getElementById('login');
+  let register = document.getElementById('register');
+  function hide(el) {
+    if (el == 'login') {
+      login.classList.add('inactive');
+      register.classList.remove('inactive');
+    }
+    else if (el == 'register') {
+      register.classList.add('inactive');
+      login.classList.remove('inactive');
+    }
+    else [
+      console.log('error')
+    ]
+  }
+}
+
+let addDocsBtn = select('#add-docs');
+if (addDocsBtn) {
+  let btn = document.getElementById('add-docs');
+  function clickAdd() {
+    btn.click();
+  }
+
+  function addDocs(filePath) {
+    let table = document.getElementById('docs-table-body')
+    filePath = filePath.split('\\');
+    let fileName = filePath[filePath.length - 1];
+    let a = document.createElement('a');
+    a.appendChild(document.createTextNode(fileName));
+    a.setAttribute('href', 'documets/syed.jahari0749-001.pdf');
+    let newRow = table.insertRow(table.rows.length);
+    newRow.id = "newRow";
+    let file = newRow.insertCell(0);
+    let desc = newRow.insertCell(1);
+
+    file.appendChild(a);
+    desc.innerHTML = "<input type='text' id='doc-desc' placeholder='Add Description' onkeydown='submitDesc(this.value)'>";
+    let btnDiv = document.getElementsByClassName('add-docs')[0];
+  }
+
+  function submitDesc(value) {
+    if (event.keyCode === 13) {
+      let row = document.getElementById('newRow');
+      row.deleteCell(1);
+      let desc = row.insertCell(1);
+      desc.innerHTML = value;
+      row.removeAttribute('id')
+    }
+  }
+}
