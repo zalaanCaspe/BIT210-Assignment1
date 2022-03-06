@@ -1390,6 +1390,15 @@ section {
   display: none;
 }
 
+.profile .btn {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.profile .btn:hover {
+  background-color: #4ea5e0;
+}
+
 /*--------------------------------------------------------------
 # Login
 --------------------------------------------------------------*/
