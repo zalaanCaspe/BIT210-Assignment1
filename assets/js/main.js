@@ -398,18 +398,18 @@ if (trigger) {
  * create an li element and add file name as text to it
  * append the li element to the docs-list item
  */
-let logRegForm = select('.log-reg-container');
-if (logRegForm) {
-  let login = document.getElementById('login');
-  let register = document.getElementById('register');
+let hideTrigger = select('.hide');
+if (hideTrigger) {
+  let first = document.getElementById('first');
+  let second = document.getElementById('second');
   function hide(el) {
-    if (el == 'login') {
-      login.classList.add('inactive');
-      register.classList.remove('inactive');
+    if (el == 'first') {
+      first.classList.add('inactive');
+      second.classList.remove('inactive');
     }
-    else if (el == 'register') {
-      register.classList.add('inactive');
-      login.classList.remove('inactive');
+    else if (el == 'second') {
+      second.classList.add('inactive');
+      first.classList.remove('inactive');
     }
     else [
       console.log('error')

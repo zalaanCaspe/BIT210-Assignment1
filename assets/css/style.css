@@ -1409,10 +1409,6 @@ section {
   margin-top: 50px;
 }
 
-.log-reg-container {
-  position: relative;
-}
-
 .login-card, .register-card {
   position: relative;
   background-color: rgba(157, 199, 233, 0.274);
