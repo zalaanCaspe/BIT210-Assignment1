@@ -285,6 +285,7 @@ function searchFilter() {
 
 }
 
+
 /**
  * Initiate portfolio lightbox 
  * The lightbox package allows images links to be displayed

@@ -90,7 +90,7 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-        <div class="container">
+        <div class="container hide">
             <div class="py-5 text-center">
               <h2>Aid Contribution Form</h2>
               <p class="lead">Insert contribution details here</p>
@@ -208,15 +208,15 @@
                   <h5 class="mb-3">Payment channel</h4>
                   <div class="d-block my-3">
                     <div class="custom-control custom-radio">
-                        <input id="bankTransfer" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                        <input id="bankTransfer" name="paymentMethod" type="radio" class="custom-control-input" onclick = "hide('second')" checked required>
                         <label class="custom-control-label" for="bankTransfer">Bank transfer</label>
                     </div>
                     <div class="custom-control custom-radio">
-                      <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                      <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" onclick = "hide('first')" required>
                       <label class="custom-control-label" for="credit">Credit card</label>
                     </div>
                     <div class="custom-control custom-radio">
-                      <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                      <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" onclick = "hide('first')" required>
                       <label class="custom-control-label" for="debit">Debit card</label>
                     </div>
                     
@@ -234,6 +234,7 @@
 
                 
                 <!--Bank Transfer-->
+                <div id = 'first'>
                 <br>
                   <h5 class="mb-3">Bank transfer</h4>
                   
@@ -263,8 +264,10 @@
                       </div>
                     </div>
                   </div>
+                </div>
 
                 <!--Credit or Debit Card-->
+                <div id = 'second' class = 'inactive'>
                   <br>
                   <h5 class="mb-3">Credit or debit card</h4>
                   
@@ -288,7 +291,7 @@
                   <div class="row">
                     <div class="col-md-3 mb-3">
                       <label for="cc-expiration">Expiration</label>
-                      <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                      <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" required>
                       <div class="invalid-feedback">
                         Expiration date required
                       </div>
@@ -302,7 +305,9 @@
                     </div>
                   </div>
 
-                  <hr class="mb-4">
+                  
+                </div>
+                <hr class="mb-4">
                   <button class="btn btn-primary btn-lg btn-block" type="submit">Contribute Now</button>
                 </form>
               </div>
