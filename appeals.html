@@ -107,13 +107,27 @@
           <h2 id="waypoint">Browse Appeals</h2>
           <p><strong>Organizations around Malaysia need your help today!</strong></p>
           <br>
-          <p><em>Appeal period:</em></p>
-          <p>01 March, 2022 - 01 April, 2022</p>
+          <!--<p><em>Appeal period</em></p>-->
         </div>
 
+        <!--<div class="row">
+          <div class="col-6">
+            <p style = "text-align: center">From:</p>
+            <input type="date" onchange="searchDate()" id = "fromDate" class="searchDate form-control" placeholder="Search">
+          </div>
+          <div class="col">
+            <input type="date" onchange="searchDate()" id = "toDate" class="searchDate form-control" placeholder="Search">
+          </div>
+        </div>-->
+
+        <!--filtering for current/past appeals-->
         <div class="row">
           <div class="col">
-            <input type="date" onkeyup="searchFilter()" class="searchFilter form-control" placeholder="Search">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter="">Current Appeals</li>
+              <li data-filter="">Past Appeals</li>
+            </ul>
           </div>
         </div>
 
@@ -141,6 +155,7 @@
               <div class="portfolio-info">
                 <h4><a href="shelterHomeAppeals.html">Shelter Home</a></h4>
                 <p>Food and cash aid</p>
+                <p class="searchDate">2022-03-01 , 2022-04-01</p>
               </div>
             </div>
           </div>
@@ -156,6 +171,7 @@
               <div class="portfolio-info">
                 <h4><a href="shelterHomeAppeals.html">Project Wawasan Rakyat</a></h4>
                 <p>Cash aid</p>
+                <p class="searchDate">2022-03-01 , 2022-04-01</p>
               </div>
             </div>
           </div>
@@ -171,6 +187,7 @@
               <div class="portfolio-info">
                 <h4><a href="shelterHomeAppeals.html">NGOHub</a></h4>
                 <p>Cash aid</p>
+                <p class="searchDate">2022-03-02 , 2022-04-02</p>
               </div>
             </div>
           </div>
@@ -186,6 +203,7 @@
               <div class="portfolio-info">
                 <h4><a href="shelterHomeAppeals.html">KKM</a></h4>
                 <p>Supplies and cash aid</p>
+                <p class="searchDate">2022-03-02 , 2022-04-02</p>
               </div>
             </div>
           </div>
@@ -201,6 +219,7 @@
               <div class="portfolio-info">
                 <h4><a href="shelterHomeAppeals.html">MMHA</a></h4>
                 <p>Cash aid</p>
+                <p class="searchDate">2022-03-03 , 2022-04-03</p>
               </div>
             </div>
           </div>
@@ -216,6 +235,7 @@
               <div class="portfolio-info">
                 <h4><a href="shelterHomeAppeals.html">Refuge for the Refugees</a></h4>
                 <p>Cash aid</p>
+                <p class="searchDate">2022-03-03 , 2022-04-03</p>
               </div>
             </div>
           </div>
@@ -231,6 +251,7 @@
               <div class="portfolio-info">
                 <h4><a href="shelterHomeAppeals.html">MERCY Malaysia</a></h4>
                 <p>Supplies and cash aid</p>
+                <p class="searchDate">2022-03-04 , 2022-04-04</p>
               </div>
             </div>
           </div>
@@ -246,6 +267,7 @@
               <div class="portfolio-info">
                 <h4><a href="shelterHomeAppeals.html">UM Medical Centre</a></h4>
                 <p>Supplies and cash aid</p>
+                <p class="searchDate">2022-03-05 , 2022-04-05</p>
               </div>
             </div>
           </div>
@@ -261,6 +283,7 @@
               <div class="portfolio-info">
                 <h4><a href="shelterHomeAppeals.html">Zoo Negara</a></h4>
                 <p>Cash aid</p>
+                <p class="searchDate">2022-03-05 , 2022-04-05</p>
               </div>
             </div>
           </div>
