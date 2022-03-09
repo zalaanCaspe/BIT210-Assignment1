@@ -694,13 +694,13 @@ section {
 .portfolio {
   padding: 0px 0;
 }
-.portfolio #portfolio-flters {
+.portfolio #portfolio-flters, .portfolio #portfolio-filters-date {
   padding: 0;
   margin: 0 0 35px 0;
   list-style: none;
   text-align: center;
 }
-.portfolio #portfolio-flters li {
+.portfolio #portfolio-flters li, .portfolio #portfolio-filters-date li {
   cursor: pointer;
   margin: 0 15px 15px 0;
   display: inline-block;
@@ -714,11 +714,13 @@ section {
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
-.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active, 
+.portfolio #portfolio-filters-date li:hover, .portfolio #portfolio-filters-date li.filter-active {
   background: #3498db;
   color: #fff;
 }
-.portfolio #portfolio-flters li:last-child {
+.portfolio #portfolio-flters li:last-child, 
+.portfolio #portfolio-filters-date li:last-child {
   margin-right: 0;
 }
 .portfolio .portfolio-wrap {

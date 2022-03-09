@@ -229,19 +229,51 @@ window.addEventListener('load', () => {
       itemSelector: '.portfolio-item',
       layoutMode: 'fitRows'
     });
-
+    
     let portfolioFilters = select('#portfolio-flters li', true);
-
+    
     on('click', '#portfolio-flters li', function (e) {
       e.preventDefault();
       portfolioFilters.forEach(function (el) {
         el.classList.remove('filter-active');
       });
       this.classList.add('filter-active');
-
+      
       portfolioIsotope.arrange({
         filter: this.getAttribute('data-filter')
       });
+    }, true);
+    
+
+    let portfolioDateFilters = select('#portfolio-filters-date li', true);
+
+    function getDates() {
+      let today = new Date();
+      Array.from(portfolioItems).forEach((item) => {
+        let dateField = item.getElementsByClassName('searchDate')[0].innerHTML;
+        let endDate = new Date(dateField.split(' - ')[1]);
+        if (endDate > today) {
+          item.classList.add('current');
+          console.log('current ' + today);
+        }
+        else {
+            item.classList.add('past')
+          };
+      })
+      };
+    let portfolioItems = document.getElementsByClassName('portfolio-item');
+    if(portfolioItems)
+      getDates()
+    on('click', '#portfolio-filters-date li', function (e) {
+      e.preventDefault();
+      portfolioDateFilters.forEach(function (li) {
+        li.classList.remove('filter-active');
+      });
+      this.classList.add('filter-active');
+
+      portfolioIsotope.arrange({
+        filter: this.getAttribute("data-filter")
+      })
     }, true);
   }
 
