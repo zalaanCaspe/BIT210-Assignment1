@@ -187,9 +187,6 @@
                       <div class="invalid-feedback">
                         Please enter the type of goods.
                       </div>
-                      <div class="invalid-feedback">
-                        Please provide a valid state.
-                      </div>
                     </div>
                     <div class="col-md-3 mb-3">
                       <label for="quantity">Quantity</label>
@@ -214,7 +211,7 @@
                     <label for="address1">Address Line 1 for disbursement delivery</label>
                     <input type="text" class="form-control" id="address1" required>
                     <div class="invalid-feedback">
-                      Please enter your shipping address.
+                      Please enter your disbursement address.
                     </div>
                   </div>
       
@@ -267,7 +264,7 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <p>Subscribe to be notified about the latest appeals on HELP Aid!</p>
-            <form action="" method="post">
+            <form action="" method="post" >
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
@@ -313,6 +310,41 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+
+      function myFunction() {
+  alert("The form was submitted");
+}
+    </script>
 
 </body>
 
