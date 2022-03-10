@@ -78,14 +78,20 @@
                     <h2>Login</h2>
                     <p>Don't have an account? <a onclick="hide('first')">Register</a> as an applicant!</p>
                   </div>
-                    <form action="/action_page.php" method="POST" class="form px-3 login-form">
+                    <form action="/action_page.php" method="POST" class="form px-3 login-form needs-validation" novalidate>
                       <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="username" placeholder="Username" required>
                         <label for="username">Username</label>
+                        <div class="invalid-feedback">
+                          Please enter your username
+                        </div>
                       </div>
                       <div class="form-floating mb-3">
                         <input type="password" class="form-control" id="password" placeholder="Password" required>
                         <label for="password">Password</label>
+                        <div class="invalid-feedback">
+                          Please enter your password
+                        </div>
                       </div>
                       <input type="submit" class="btn" value="Login">
                     </form>
@@ -97,12 +103,12 @@
                     <h2>Register</h2>
                     <p>Already have an account? <a onclick="hide('second')">Login</a> with your username!</p>
                   </div>
-                    <form action="/action_page.php" method="POST" class="form row px-3 login-form">
+                    <form action="/action_page.php" method="POST" class="form row px-3 login-form needs-validation" novalidate>
                       <div class="col-lg-6">
                         <div class="form-floating mb-3">
                           <select name="org-name" id="org-name" class="form-select" required>
-                            <option value="">Choose</option>
-                            <option value="Kementerian Kesihatan Malaysia" selected>Kementerian Kesihatan Malaysia</option>
+                            <option value="" selected>Choose</option>
+                            <option value="Kementerian Kesihatan Malaysia">Kementerian Kesihatan Malaysia</option>
                             <option value="MERCY Malaysia">MERCY Malaysia</option>
                             <option value="MMHA">MMHA</option>
                             <option value="NGOHub">NGOHub</option>
@@ -113,24 +119,39 @@
                             <option value="Zoo Negara">Zoo Negara</option>
                           </select>
                           <label for="org-id">Organization Name</label>
+                          <div class="invalid-feedback">
+                            Please select an organization to register under
+                          </div>
                         </div>
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="fullname" placeholder="Full Name" required>
                           <label for="fullname">Full Name</label>
+                          <div class="invalid-feedback">
+                            Please enter the full name
+                          </div>
                         </div>
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="id-no" placeholder="ID No." required>
                           <label for="id-no">ID No.</label>
+                          <div class="invalid-feedback">
+                            Please enter an ID number
+                          </div>
                         </div>
                         <div class="form-floating mb-3">
-                          <input type="number" class="form-control" id="hh-income" placeholder="Household Income" required>
+                          <input type="number" class="form-control" id="hh-income" placeholder="Household Income" min="0" required>
                           <label for="hh-income">Household Income (RM)</label>
+                          <div class="invalid-feedback">
+                            Please enter a household income
+                          </div>
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="address1" placeholder="Address 1" required>
                           <label for="address1">Address 1</label>
+                          <div class="invalid-feedback">
+                            Please enter an address
+                          </div>
                         </div>
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="address2" placeholder="Address 2">
@@ -139,6 +160,9 @@
                         <div class="form-floating mb-3">
                           <input type="text" class="form-control" id="org-city" placeholder="City" required>
                           <label for="org-city">City</label>
+                          <div class="invalid-feedback">
+                            Please enter a city
+                          </div>
                         </div>
                         <div class="form-floating mb-3">
                           <select name="states" id="state" class="form-select" required>
@@ -161,10 +185,16 @@
                             <option value="Terengganu">Terengganu</option>
                           </select>
                           <label for="state">State</label>
+                          <div class="invalid-feedback">
+                            Please select a state
+                          </div>
                         </div>
                         <div class="form-floating mb-3">
-                          <input type="text" pattern="[0-9]{5}" title="Field must be 5 digits" class="form-control" id="zip" placeholder="Zip">
+                          <input type="text" pattern="[0-9]{5}" title="Field must be 5 digits" class="form-control" id="zip" placeholder="Zip" required>
                           <label for="zip">Zip</label>
+                          <div class="invalid-feedback">
+                            Please enter a 5-digit zipcode
+                          </div>
                         </div>
                       </div>
                       <input type="submit" class="btn" value="Register">

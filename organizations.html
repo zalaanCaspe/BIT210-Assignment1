@@ -384,15 +384,21 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
-          <form action="/action_page.php" method="POST" class="form col-11 mx-auto add-organization-form">
+          <form action="/action_page.php" method="POST" class="form col-11 mx-auto add-organization-form needs-validation" novalidate>
             <div class="form-floating mb-3 mt-3">
               <input type="text" class="form-control" id="org-name" placeholder="Organization Name" required>
               <label for="org-name">Organization Name</label>
+              <div class="invalid-feedback">
+                Please enter the organization
+              </div>
             </div>
 
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="org-address1" placeholder="Address 1" required>
               <label for="org-address1">Address 1</label>
+              <div class="invalid-feedback">
+                Please enter the organization address
+              </div>
             </div>
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="org-address2" placeholder="Address 2">
@@ -401,6 +407,9 @@
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="org-city" placeholder="City" required>
               <label for="org-city">City</label>
+              <div class="invalid-feedback">
+                Please enter a city
+              </div>
             </div>
             <div class="form-floating mb-3">
               <select name="states" id="org-state" class="form-select" required>
@@ -423,10 +432,16 @@
                 <option value="Terengganu">Terengganu</option>
               </select>
               <label for="org-state">State</label>
+              <div class="invalid-feedback">
+                Please select a state
+              </div>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" pattern="[0-9]{5}" title="Field must be 5 digits" class="form-control" id="org-zip" placeholder="Zip">
+              <input type="text" pattern="[0-9]{5}" title="Field must be 5 digits" class="form-control" id="org-zip" placeholder="Zip" required>
               <label for="org-zip">Zip</label>
+              <div class="invalid-feedback">
+                Please enter a 5-digit zipcode
+              </div>
             </div>
             <div class="modal-footer">
               <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

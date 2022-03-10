@@ -230,39 +230,43 @@ window.addEventListener('load', () => {
       layoutMode: 'fitRows'
     });
     
-    // let portfolioFilters = select('#portfolio-flters li', true);
+    let portfolioFilters = select('#portfolio-flters li', true);
     
-    // on('click', '#portfolio-flters li', function (e) {
-    //   e.preventDefault();
-    //   portfolioFilters.forEach(function (el) {
-    //     el.classList.remove('filter-active');
-    //   });
-    //   this.classList.add('filter-active');
-      
-    //   portfolioIsotope.arrange({
-    //     filter: this.getAttribute('data-filter')
-    //   });
-    // }, true);
+    on('click', '#portfolio-flters li', function (e) {
+      e.preventDefault();
+      portfolioFilters.forEach(function (el) {
+        el.classList.remove('filter-active');
+      });
+      this.classList.add('filter-active');
+
+      portfolioIsotope.arrange({
+        filter: this.getAttribute('data-filter')
+      });
+    }, true);
     
 
     let portfolioDateFilters = select('#portfolio-filters-date li', true);
 
-    function getDates() {
-      let today = new Date();
-      Array.from(portfolioItems).forEach((item) => {
-        let dateField = item.getElementsByClassName('searchDate')[0].innerHTML;
-        let endDate = new Date(dateField.split(' - ')[1]);
-        if (endDate > today) {
-          item.classList.add('current');
-        }
-        else {
-          item.classList.add('past')
-        };
-      })
+    let searchDate = select('.searchDate');
+    if (searchDate) {
+      function getDates() {
+        let today = new Date();
+        Array.from(portfolioItems).forEach((item) => {
+          let dateField = item.getElementsByClassName('searchDate')[0].innerHTML;
+          let endDate = new Date(dateField.split(' - ')[1]);
+          if (endDate > today) {
+            item.classList.add('current');
+          }
+          else {
+            item.classList.add('past')
+          };
+        })
+      };
+      let portfolioItems = document.getElementsByClassName('portfolio-item');
+      if(portfolioItems)
+        getDates();
     };
-    let portfolioItems = document.getElementsByClassName('portfolio-item');
-    if(portfolioItems)
-      getDates()
+
     on('click', '#portfolio-filters-date li', function (e) {
       e.preventDefault();
       portfolioDateFilters.forEach(function (li) {
@@ -296,7 +300,13 @@ function searchFilter() {
   var searchInput = document.querySelector('.searchFilter');
   searchInput.addEventListener('keyup', debounce(function () {
     searchRegex = new RegExp(searchInput.value, 'gi');
-    searchIsotope.arrange();
+    if(searchInput.value == ''){
+      let all = select("#portfolio-flters li", true)[0];
+      all.click();
+    }
+    else {
+      searchIsotope.arrange();
+    }
   }, 200));
 
   // debounce so filtering doesn't happen every millisecond
@@ -479,4 +489,20 @@ if (addDocsBtn) {
       row.removeAttribute('id')
     }
   }
+}
+
+
+var forms = document.querySelectorAll('.needs-validation')
+if (forms) {
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
 }

@@ -94,7 +94,7 @@
                             <p>Fill out the form below to add a new organization</p>
                         </div>
 
-                        <form action="/action_page.php" method="POST" class="form col-11 mx-auto add-organization-form">
+                        <form action="/action_page.php" method="POST" class="form col-11 mx-auto add-organization-form needs-validation" novalidate>
                             <div class="row">
                                 <div class="col-lg-4 form-floating mb-3 mt-3">
                                 <select name="org-id" id="appeal-org-id" class="form-select" required disabled>
@@ -130,19 +130,32 @@
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="appeal-title" placeholder="Title" required>
                                 <label for="appeal-title">Title</label>
+                                <div class="invalid-feedback">
+                                  Please enter the appeal title
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6 form-floating mb-3">
                                     <input type="date" class="form-control" id="appeal-date-from" placeholder="" required>
-                                    <label for="appeal-date-from"></label>
+                                    <label for="appeal-date-from">Starting date</label>
+                                    <div class="invalid-feedback">
+                                      Please select a starting date (must be before ending date)
+                                    </div>
                                 </div>
                                 <div class="col-lg-6 form-floating mb-3">
                                     <input type="date" class="form-control" id="appeal-date-to" placeholder="" required>
+                                    <label for="appeal-date-so">Ending date</label>
+                                    <div class="invalid-feedback">
+                                      Please select an ending date (must be after starting date)
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="appeal-desc" placeholder="Description" style="height: 100px;" required></textarea>
                                 <label for="appeal-desc">Description</label>
+                                <div class="invalid-feedback">
+                                  Please enter an appeal description
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="reset" class="btn btn-secondary">Cancel</button>
@@ -241,6 +254,23 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        let dateFrom = document.getElementById('appeal-date-from');
+        let dateTo = document.getElementById('appeal-date-to');
+        dateFrom.addEventListener('change', compareDates);
+        dateTo.addEventListener('change', compareDates);
+        function compareDates() {
+            let from = new Date(dateFrom.value);
+            let to = new Date(dateTo.value);
+            if (from >= to) {
+                this.setCustomValidity('wrong');
+            }
+            else
+                this.setCustomValidity('');
+        }
+
+    </script>
 
 </body>
 
