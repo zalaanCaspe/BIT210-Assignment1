@@ -334,16 +334,15 @@
               if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
-              }
+              } else {
               form.classList.add('was-validated');
+              alert("The form has been submitted");
+              }
             }, false);
           });
         }, false);
       })();
 
-      function myFunction() {
-  alert("The form was submitted");
-}
     </script>
 
 </body>

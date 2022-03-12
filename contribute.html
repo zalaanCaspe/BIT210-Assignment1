@@ -165,7 +165,7 @@
                     </div>
                     <div class="col-md-6 mb-6">
                       <label for="otherGoodsType">Other goods type</label>
-                      <input type="text" class="form-control" id="otherGoodsType" placeholder="" required>
+                      <input type="text" class="form-control" id="otherGoodsType" placeholder="">
                       <div class="invalid-feedback">
                         Please enter the type of goods.
                       </div>
@@ -192,7 +192,7 @@
                     <label for="estimatedValue">Estimated value (RM)<span class="text-muted"></span></label>
                     <input type="number" min="1" class="form-control" id="estimatedValue" required>
                     <div class="invalid-feedback">
-                      Please enter a valid description.
+                      Please enter a valid estimated value.
                     </div>
                   </div>
       
@@ -238,7 +238,7 @@
                   <div class="row">
                     <div class="col-md-6 mb-3">
                       <label for="bank-name">Name of account holder</label>
-                      <input type="text" class="form-control" id="bank-name" placeholder="" required>
+                      <input type="text" class="form-control" id="bank-name" placeholder="">
                       <small class="text-muted">Full name as displayed on NRIC</small>
                       <div class="invalid-feedback">
                         Name of account holder is required
@@ -246,7 +246,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                       <label for="bank-number">Bank account number</label>
-                      <input type="text" class="form-control" id="bank-number" placeholder="" required>
+                      <input type="text" class="form-control" id="bank-number" placeholder="">
                       <div class="invalid-feedback">
                         Bank account number is required
                       </div>
@@ -255,7 +255,7 @@
                   <div class="row">
                     <div>
                       <label for="referenceNo">Reference Number</label>
-                      <input type="text" class="form-control" id="referenceNo" placeholder="" required>
+                      <input type="text" class="form-control" id="referenceNo" placeholder="">
                       <div class="invalid-feedback">
                         Reference number required
                       </div>
@@ -396,11 +396,11 @@
   <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script> -->
-    <!-- <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/vendor/holder.min.js"></script> -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
@@ -416,12 +416,15 @@
               if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
-              }
+              } else {
               form.classList.add('was-validated');
+              alert("The form has been submitted");
+              }
             }, false);
           });
         }, false);
       })();
+
     </script>
 
 </body>
