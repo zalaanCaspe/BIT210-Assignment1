@@ -501,6 +501,8 @@ if (forms) {
           event.preventDefault()
           event.stopPropagation()
         }
+        else
+          alert("Form submitted")
 
         form.classList.add('was-validated')
       }, false)
