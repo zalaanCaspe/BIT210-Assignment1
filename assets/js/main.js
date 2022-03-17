@@ -502,7 +502,7 @@ if (forms) {
           event.stopPropagation()
         }
         else
-          alert("Form submitted")
+          alert("The form has been submitted")
 
         form.classList.add('was-validated')
       }, false)
